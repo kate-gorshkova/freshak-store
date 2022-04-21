@@ -1,0 +1,23 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+    Каталог сайта
+{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>Каталог сайта</h1>
+        {% if goods %}
+            {% for good in goods %}
+                <div class="alert alert-warning">
+                    <h3>{{ good.title }}</h3>
+                    <p>{{ good.description }}</p>
+                    <a href="{% url 'catalog_detail' good.pk %}" class="btn btn-warning">К товару</a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>Товары отсутствуют</p>
+        {% endif %}
+
+    </div>
+{% endblock %}

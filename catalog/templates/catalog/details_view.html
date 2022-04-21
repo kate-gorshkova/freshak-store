@@ -1,0 +1,15 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+    {{ good.title }}
+{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>{{ good.title }}</h1>
+        <p>{{ good.price }}</p>
+        <p>{{ good.description }}</p>
+        <a href="{% url 'catalog_update' good.pk %}" class="btn btn-info">Редактировать</a>
+        <a href="{% url 'catalog_delete' good.pk %}" class="btn btn-danger">Удалить</a>
+    </div>
+{% endblock %}

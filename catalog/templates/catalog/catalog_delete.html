@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+    Удаление товара
+{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>Удаление товара</h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{ good.title }}<br>
+            <button class="btn btn-success" type="submit">Удалить товар</button>
+        </form>
+    </div>
+{% endblock %}

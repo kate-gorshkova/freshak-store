@@ -1,0 +1,23 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>{{ title }}</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur ea eum facilis incidunt ipsam iste labore magnam molestiae nesciunt nisi qui quod sed, sint temporibus, tenetur ullam unde voluptate!</p>
+        <button class="btn btn-warning">На страницу про нас</button>
+
+        {% for el in values %}
+            {% filter upper%}
+                <p>{{ el }}</p>
+            {% endfilter %}
+        {% endfor %}
+
+        {% for el in obj %}
+            <p>{{ el|upper }}</p>
+        {% endfor %}
+    </div>
+{% endblock %}
